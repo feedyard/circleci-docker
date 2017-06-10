@@ -30,7 +30,7 @@ jobs:
           command: 'docker run -it -d $LIBRARY/$CONTAINER_NAME:latest ash'
       - run:
           name: test2
-          commnad: 'docker ps'
+          command: 'docker ps'
 #      - deploy:
 #          name: deploy to docker hub
 #          command: |
