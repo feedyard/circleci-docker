@@ -3,6 +3,10 @@ version: 2
 jobs:
   build:
     working_directory: ~/circleci-docker
+    environment:
+      LIBRARY: feedyard
+      CONTAINER_NAME: circleci-docker
+      VERSION: 3.6
     docker:
       - image: circleci/python:3.6.1
     steps:
@@ -16,7 +20,13 @@ jobs:
           command: 'openssl aes-256-cbc -d -in secrets.ci -k $KEY >> ~/.circlerc'
       - run:
           name: build image
-          environment:
-            LIBRARY: feedyard
-            IMAGE: circleci-docker
-          command: 'docker build -t $LIBRARY/$IMAGE:latest .'
+          command: 'docker build -t $LIBRARY/$CONTAINER_NAME:latest .'
+      - run:
+          name: tag with build version
+          command: 'docker tag $LIBRARY/$CONTAINER_NAME:latest $LIBRARY/$CONTAINER_NAME:$VERSION.$CIRCLE_BUILD_NUM'
+      - deploy:
+          name: deploy to docker hub
+          command: |
+            'docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS'
+            'docker push $LIBRARY/$CONTAINER_NAME:$VERSION.$CIRCLE_BUILD_NUM'
+            'docker push $LIBRARY/$CONTAINER_NAME:latest'
