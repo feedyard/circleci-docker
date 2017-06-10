@@ -17,10 +17,7 @@ jobs:
           command: 'docker info'
       - run:
           name: decrypt secrets
-          command: 'openssl aes-256-cbc -d -in secrets.ci -k $KEY >> ~/.circlerc'
-      - run:
-          name: test
-          command: 'ls -la'
+          command: 'openssl aes-256-cbc -d -in secrets.ci -k $KEY >> .circlerc'
       - run:
           name: build image
           command: 'docker build -t $LIBRARY/$CONTAINER_NAME:latest .'
@@ -30,6 +27,6 @@ jobs:
       - deploy:
           name: deploy to docker hub
           command: |
-            docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
             docker push $LIBRARY/$CONTAINER_NAME:$VERSION.$CIRCLE_BUILD_NUM
             docker push $LIBRARY/$CONTAINER_NAME:latest
