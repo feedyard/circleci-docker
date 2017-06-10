@@ -17,7 +17,9 @@ jobs:
           command: 'docker info'
       - run:
           name: decrypt secrets
-          command: 'openssl aes-256-cbc -d -in secrets.ci -k $KEY >> .circlerc'
+          command: |
+            openssl aes-256-cbc -d -in secrets.ci -k $KEY >> .circlerc'
+            eval $(cat .circlerc)
       - run:
           name: build image
           command: 'docker build -t $LIBRARY/$CONTAINER_NAME:latest .'
