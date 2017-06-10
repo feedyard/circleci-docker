@@ -16,6 +16,9 @@ jobs:
           name: confirm Docker
           command: 'docker info'
       - run:
+          name: test
+          command: echo $DOCKER_PASS
+      - run:
           name: decrypt secrets
           command: 'openssl aes-256-cbc -d -in secrets.ci -k $KEY >> ~/.circlerc'
       - run:
