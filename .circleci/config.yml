@@ -7,6 +7,7 @@ jobs:
       LIBRARY: feedyard
       CONTAINER_NAME: circleci-docker
       VERSION: 3.6
+      BASH_ENV: .circlerc
     docker:
       - image: circleci/python:3.6.1
     steps:
@@ -17,9 +18,7 @@ jobs:
           command: 'docker info'
       - run:
           name: decrypt secrets
-          command: |
-            openssl aes-256-cbc -d -in secrets.ci -k $KEY >> .circlerc
-            eval $(cat .circlerc)
+          command: 'openssl aes-256-cbc -d -in secrets.ci -o .circlerc -k $KEY'
       - run:
           name: build image
           command: 'docker build -t $LIBRARY/$CONTAINER_NAME:latest .'
