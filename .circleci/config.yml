@@ -18,7 +18,7 @@ jobs:
       - run:
           name: decrypt secrets
           command: |
-            openssl aes-256-cbc -d -in secrets.ci -k $KEY >> .circlerc'
+            openssl aes-256-cbc -d -in secrets.ci -k $KEY >> .circlerc
             eval $(cat .circlerc)
       - run:
           name: build image
