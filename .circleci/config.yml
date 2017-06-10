@@ -30,6 +30,6 @@ jobs:
       - deploy:
           name: deploy to docker hub
           command: |
-            docker login -u $DOCKER_USER -p $DOCKER_PASS
+            docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
             docker push $LIBRARY/$CONTAINER_NAME:$VERSION.$CIRCLE_BUILD_NUM
             docker push $LIBRARY/$CONTAINER_NAME:latest
