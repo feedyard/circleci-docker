@@ -20,7 +20,7 @@ jobs:
           command: 'openssl aes-256-cbc -d -in secrets.ci -k $KEY >> ~/.circlerc'
       - run:
           name: test
-          command: 'echo $DOCKER_PASS'
+          command: 'ls -la'
       - run:
           name: build image
           command: 'docker build -t $LIBRARY/$CONTAINER_NAME:latest .'
