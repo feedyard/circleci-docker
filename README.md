@@ -1,2 +1,3 @@
 # circleci-docker
-Docker image for use with circleci remote_docker build method
+Docker image based on alpine linux for use with circleci remote_docker step
+

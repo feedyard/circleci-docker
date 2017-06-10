@@ -1,0 +1,22 @@
+version: 2
+
+jobs:
+  build:
+    working_directory: ~/circleci-docker
+    docker:
+      - image: circleci/python:3.6.1
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: confirm Docker
+          command: 'docker info'
+      - run:
+          name: decrypt secrets
+          command: 'openssl aes-256-cbc -d -in secrets.ci -k $KEY >> ~/.circlerc'
+      - run:
+          name: build image
+          environment:
+            LIBRARY: feedyard
+            IMAGE: circleci-docker
+          command: 'docker build -t $LIBRARY/$IMAGE:latest .'
