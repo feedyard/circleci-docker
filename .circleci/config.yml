@@ -9,7 +9,7 @@ jobs:
       VERSION: 3.6
       BASH_ENV: .circlerc
     docker:
-      - image: feedyard/circleci-docker # circleci/python:3.6.1
+      - image: circleci/python:3.6.1
     steps:
       - checkout
       - setup_remote_docker
