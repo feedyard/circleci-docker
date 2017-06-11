@@ -76,7 +76,7 @@ end
 control 'pip version' do
   impact 1.0
   title 'confirm pip version installed'
-  desc 'confirm version reported by pip matches the desired version'
+  desc 'confirm version reported by pip3 matches the desired version'
   describe command('pip -V') do
     its('stdout') { should include ('9.0.1') }
   end
