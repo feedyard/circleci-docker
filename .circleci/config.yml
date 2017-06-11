@@ -28,9 +28,10 @@ jobs:
       - run:
           name: configuration tests
           command: |
+            inspec exec profiles/cis-docker
             docker run -it -d $LIBRARY/$CONTAINER_NAME:latest ash
             CID="$(docker run -it -d feedyard/circleci-docker:latest ash)"
-            inspec exec profile -t docker://$CID
+            inspec exec profiles/circleci-dodcker/ -t docker://$CID
       - deploy:
           name: deploy to docker hub
           command: |

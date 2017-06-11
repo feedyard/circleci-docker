@@ -1,5 +1,7 @@
 # Change Log
 
+package installs naturally include the dependencies
+
 ### 06-07-2017 Initial build automation
 
 alpine:3.6
@@ -18,3 +20,17 @@ python3 (3.6.1-r2)
 setuptools (36.0.1)
 docker (17.05.0-r0)
 docker-compose (1.13)
+
+### 06-11-2017 add ruby and inspec for testing strategies
+
+same as 06-07-2017 plus
+
+Additional installed packages:
+ruby (2.4.1-r3)
+ruby-bundler (1.15.0-r0)
+ruby-dev (2.4.1-r3)
+g++ (6.3.0-r4)
+libffi-dev (3.2.1-r3)
+musl-dev (1.1.16-r9)
+make (4.2.1-r0)
+gem install inspec -v 1.27.0

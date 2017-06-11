@@ -15,3 +15,5 @@ RUN rc-update add docker boot
 RUN pip install docker-compose
 RUN echo "gem: --no-document" > /etc/gemrc
 RUN gem install inspec -v 1.27.0
+
+HEALTHCHECK NONE
