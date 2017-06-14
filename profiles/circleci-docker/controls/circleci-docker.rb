@@ -144,3 +144,12 @@ control 'inspec version' do
     its('stdout') { should include ('1.27.0') }
   end
 end
+
+control 'invoke version' do
+  impact 1.0
+  title 'confirm invoke version installed'
+  desc 'confirm version reported by invoke matches the desired version'
+  describe command('invoke --version') do
+    its('stdout') { should include ('0.18.1') }
+  end
+end
