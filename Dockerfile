@@ -14,6 +14,6 @@ RUN python3 -m ensurepip && \
 RUN rc-update add docker boot
 RUN pip install docker-compose invoke
 RUN echo "gem: --no-document" > /etc/gemrc
-RUN gem install inspec -v 1.27.0
+RUN gem install inspec -v 1.33.1
 
 HEALTHCHECK NONE

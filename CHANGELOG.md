@@ -23,8 +23,6 @@ docker-compose (1.13)
 
 ### 06-11-2017 add ruby and inspec for testing strategies
 
-same as 06-07-2017 plus
-
 Additional installed packages:
 ruby (2.4.1-r3)
 ruby-bundler (1.15.0-r0)
@@ -34,3 +32,14 @@ libffi-dev (3.2.1-r3)
 musl-dev (1.1.16-r9)
 make (4.2.1-r0)
 gem install inspec -v 1.27.0
+
+
+### 08-14-2017 patch//version update
+
+version changes
+git (2.13.5-r0)
+curl (7.55.0-r0)
+setuptools (36.2.7)
+docker-compose (1.15)
+musl-dev (1.1.16-r13)
+gem install inspec -v 1.33.1

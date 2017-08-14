@@ -33,7 +33,7 @@ control 'curl version' do
   title 'confirm curl version installed'
   desc 'confirm version reported by curl matches the desired version'
   describe command('curl -V') do
-    its('stdout') { should include ('7.54') }
+    its('stdout') { should include ('7.55') }
   end
 end
 
@@ -96,7 +96,7 @@ control 'docker-compose version' do
   title 'confirm docker-compose version installed'
   desc 'confirm version reported by docker-compose matches the desired version'
   describe command('docker-compose -v') do
-    its('stdout') { should include ('1.13') }
+    its('stdout') { should include ('1.15') }
   end
 end
 
@@ -141,7 +141,7 @@ control 'inspec version' do
   title 'confirm inspec version installed'
   desc 'confirm version reported by inspec matches the desired version'
   describe command('inspec version') do
-    its('stdout') { should include ('1.27.0') }
+    its('stdout') { should include ('1.33.1') }
   end
 end
 
@@ -150,6 +150,6 @@ control 'invoke version' do
   title 'confirm invoke version installed'
   desc 'confirm version reported by invoke matches the desired version'
   describe command('invoke --version') do
-    its('stdout') { should include ('0.18.1') }
+    its('stdout') { should include ('0.20.3') }
   end
 end
