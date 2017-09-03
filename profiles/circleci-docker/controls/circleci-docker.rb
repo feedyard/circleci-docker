@@ -33,8 +33,6 @@ control 'python packages' do
   desc 'confirm all desired python packages are installed'
   describe command('pip list') do
     its('stdout') { should include ('invoke') }
-    its('stdout') { should include ('boto3') }
-    its('stdout') { should include ('awscli') }
   end
 end
 
