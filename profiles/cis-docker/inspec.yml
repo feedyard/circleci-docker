@@ -1,5 +1,5 @@
 name: cis-docker
-title: CIS Docker 1.13.0 Benchmark
+title: CIS Docker CE 1.1.0 Benchmark
 summary: 4 Container Images and Build File
 version: 1.0.0
 maintainer: ncheneweth

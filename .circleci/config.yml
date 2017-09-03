@@ -9,7 +9,7 @@ jobs:
       VERSION: 3.6
       BASH_ENV: .circlerc
     docker:
-      - image: feedyard/circleci-docker #circleci/python:3.6.1
+      - image: feedyard/circleci-docker
     steps:
       - checkout
       - setup_remote_docker
@@ -29,8 +29,7 @@ jobs:
           name: configuration tests
           command: |
             inspec exec profiles/cis-docker
-            docker run -it -d $LIBRARY/$CONTAINER_NAME:latest ash
-            CID="$(docker run -it -d feedyard/circleci-docker:latest ash)"
+            CID="$(docker run -it -d $LIBRARY/$CONTAINER_NAME:latest ash)"
             inspec exec profiles/circleci-docker/ -t docker://$CID
       - deploy:
           name: deploy to docker hub

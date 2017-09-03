@@ -43,3 +43,7 @@ setuptools (36.2.7)
 docker-compose (1.15)
 musl-dev (1.1.16-r13)
 gem install inspec -v 1.33.1
+
+### 09-03-2017 patch//version update
+
+gem install inspec -v 1.35.1
