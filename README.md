@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/feedyard/circleci-docker.svg?style=shield)](https://circleci.com/gh/feedyard/circleci-docker)
+[![CircleCI](https://circleci.com/gh/feedyard/circleci-remote-docker.svg?style=shield)](https://circleci.com/gh/feedyard/circleci-remote-docker)
 
 # feedyard/circleci-remote-docker
 
@@ -6,11 +6,11 @@ Based on alpine linux for use as a primary container in a circleci setup_remote_
 
 Includes a base set of packages to for building images:
 
-ruby (2.4.1)
+ruby (2.4.2)
 python3 (3.6.1)
 docker (17.05)
 
-and InSpec (1.35.1) to support container configuration testing strategy.
+and InSpec (1.44.8) to support container configuration testing strategy.
 
 See CHANGELOG for list of installed packages/versions
 
