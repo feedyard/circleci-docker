@@ -2,12 +2,12 @@ version: 2
 
 jobs:
   build:
-    working_directory: ~/circleci-docker
+    working_directory: ~/circleci-remote-docker
     environment:
       LIBRARY: feedyard
-      CONTAINER_NAME: circleci-docker
+      CONTAINER_NAME: circleci-remote-docker
       VERSION: 3.6
-      BASH_ENV: .circlerc
+      BASH_ENV: env
     docker:
       - image: feedyard/circleci-docker
     steps:
@@ -18,7 +18,7 @@ jobs:
           command: 'docker info'
       - run:
           name: decrypt secrets
-          command: 'openssl aes-256-cbc -d -in secrets.ci -out .circlerc -k $KEY'
+          command: 'openssl aes-256-cbc -d -in secrets.ci -out env -k $KEY'
       - run:
           name: build image
           command: 'docker build -t $LIBRARY/$CONTAINER_NAME:latest .'
@@ -31,6 +31,7 @@ jobs:
             inspec exec profiles/cis-docker
             CID="$(docker run -it -d $LIBRARY/$CONTAINER_NAME:latest ash)"
             inspec exec profiles/circleci-docker/ -t docker://$CID
+            docker rm -f $CID
       - deploy:
           name: deploy to docker hub
           command: |
