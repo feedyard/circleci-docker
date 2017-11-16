@@ -30,7 +30,7 @@ jobs:
           command: |
             inspec exec profiles/cis-docker
             CID="$(docker run -it -d $LIBRARY/$CONTAINER_NAME:latest ash)"
-            inspec exec profiles/circleci-docker/ -t docker://$CID
+            inspec exec profiles/circleci-remote-docker/ -t docker://$CID
             docker rm -f $CID
       - deploy:
           name: deploy to docker hub
