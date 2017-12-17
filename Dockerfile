@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:3.7
 
 MAINTAINER Nic Cheneweth <nic.cheneweth@thoughtworks.com>
 
@@ -17,6 +17,6 @@ RUN python3 -m ensurepip && \
 RUN rc-update add docker boot
 RUN pip install invoke==0.21.0
 RUN echo "gem: --no-document" > /etc/gemrc
-RUN gem install inspec -v 1.44.8
+RUN gem install inspec -v 1.48.0
 
 HEALTHCHECK NONE
