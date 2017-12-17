@@ -41,7 +41,7 @@ control 'git version' do
   title 'confirm git version installed'
   desc 'confirm version reported by git matches the desired version'
   describe command('git version') do
-    its('stdout') { should include ('2.13') }
+    its('stdout') { should include ('2.15') }
   end
 end
 
@@ -77,7 +77,7 @@ control 'bash version' do
   title 'confirm bash version installed'
   desc 'confirm version reported by bash matches the desired version'
   describe command('bash --version') do
-    its('stdout') { should include ('4.3.48') }
+    its('stdout') { should include ('4.4') }
   end
 end
 
@@ -194,6 +194,6 @@ control 'inspec version' do
   title 'confirm inspec version installed'
   desc 'confirm version reported by inspec matches the desired version'
   describe command('inspec version') do
-    its('stdout') { should include ('1.44') }
+    its('stdout') { should include ('1.48') }
   end
 end
