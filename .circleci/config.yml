@@ -6,7 +6,7 @@ jobs:
     environment:
       LIBRARY: feedyard
       CONTAINER_NAME: circleci-remote-docker
-      VERSION: 3.6
+      VERSION: 3.7
       BASH_ENV: env
     docker:
       - image: feedyard/circleci-remote-docker
