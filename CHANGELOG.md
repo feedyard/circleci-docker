@@ -170,7 +170,7 @@ Successfully installed semverse-2.0.0
 Successfully installed htmlentities-4.3.4
 Successfully installed inspec-1.44.8
 
-# 11-16-2017 Alpine 3.7 update
+# 12-17-2017 Alpine 3.7 update
 
 (1/14) Installing ca-certificates (20171114-r0)
 (2/14) Installing libssh2 (1.8.0-r2)
@@ -289,4 +289,4 @@ Successfully installed addressable-2.5.2
 Successfully installed parslet-1.8.1
 Successfully installed semverse-2.0.0
 Successfully installed htmlentities-4.3.4
-Successfully installed inspec-1.48.0
+Successfully installed inspec-1.44.8
