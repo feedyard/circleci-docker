@@ -41,7 +41,7 @@ control 'git version' do
   title 'confirm git version installed'
   desc 'confirm version reported by git matches the desired version'
   describe command('git version') do
-    its('stdout') { should include ('2.13') }
+    its('stdout') { should include ('2.15') }
   end
 end
 
@@ -77,7 +77,7 @@ control 'bash version' do
   title 'confirm bash version installed'
   desc 'confirm version reported by bash matches the desired version'
   describe command('bash --version') do
-    its('stdout') { should include ('4.3') }
+    its('stdout') { should include ('4.4') }
   end
 end
 
@@ -122,7 +122,7 @@ control 'python3 version' do
   title 'confirm python3 version installed'
   desc 'confirm version reported by python3 matches the desired version'
   describe command('python3 -V') do
-    its('stdout') { should include ('3.6.1') }
+    its('stdout') { should include ('3.6.3') }
   end
 end
 
@@ -140,7 +140,7 @@ control 'bundler version' do
   title 'confirm bundler version installed'
   desc 'confirm version reported by bundler matches the desired version'
   describe command('bundler -v') do
-    its('stdout') { should include ('1.15') }
+    its('stdout') { should include ('1.16') }
   end
 end
 
@@ -149,7 +149,7 @@ control 'g++ version' do
   title 'confirm g++ version installed'
   desc 'confirm version reported by g++ matches the desired version'
   describe command('g++ --version') do
-    its('stdout') { should include ('6.3') }
+    its('stdout') { should include ('6.4') }
   end
 end
 
@@ -167,7 +167,7 @@ control 'docker version' do
   title 'confirm docker version installed'
   desc 'confirm version reported by docker matches the desired version'
   describe command('docker -v') do
-    its('stdout') { should include ('17.05.0-ce') }
+    its('stdout') { should include ('17.10.0-ce') }
   end
 end
 
@@ -194,6 +194,6 @@ control 'inspec version' do
   title 'confirm inspec version installed'
   desc 'confirm version reported by inspec matches the desired version'
   describe command('inspec version') do
-    its('stdout') { should include ('1.44') }
+    its('stdout') { should include ('1.48') }
   end
 end
