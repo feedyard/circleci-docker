@@ -9,7 +9,7 @@ jobs:
       VERSION: 3.7
       BASH_ENV: env
     docker:
-      - image: feedyard/circleci-remote-docker:3.6.45
+      - image: feedyard/circleci-remote-docker
     steps:
       - checkout
       - setup_remote_docker
