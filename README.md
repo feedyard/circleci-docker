@@ -8,7 +8,8 @@ ruby (2.4.3)
 python3 (3.6.3)  
 docker (17.10)  
 
-and InSpec (1.48.0) to support container configuration testing strategy.  
+and InSpec (1.44.8) to support container configuration testing strategy. Note: Must remain at this InSpec version number
+since later version enforce 'only supported linux versions' 
 
 See CHANGELOG for list of installed packages/versions
 
