@@ -5,5 +5,4 @@ version: 1.1.0
 maintainer: ncheneweth
 copyright: ncheneweth
 license: Apache-2.0
-supports:
-  - os-family: alpine
+
