@@ -86,7 +86,7 @@ control 'curl version' do
   title 'confirm curl version installed'
   desc 'confirm version reported by curl matches the desired version'
   describe command('curl -V') do
-    its('stdout') { should include ('7.57') }
+    its('stdout') { should include ('7.58') }
   end
 end
 
