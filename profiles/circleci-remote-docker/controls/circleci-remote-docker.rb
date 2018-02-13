@@ -50,7 +50,7 @@ control 'openssh version' do
   title 'confirm openssh version installed'
   desc 'confirm version reported by openssh matches the desired version'
   describe command('ssh -V') do
-    its('stderr') { should include ('7.5p1') }
+    its('stderr') { should include ('7.5') }
   end
 end
 
@@ -167,7 +167,7 @@ control 'docker version' do
   title 'confirm docker version installed'
   desc 'confirm version reported by docker matches the desired version'
   describe command('docker -v') do
-    its('stdout') { should include ('17.10.0-ce') }
+    its('stdout') { should include ('17.10') }
   end
 end
 
@@ -185,7 +185,7 @@ control 'invoke version' do
   title 'confirm invoke version installed'
   desc 'confirm version reported by invoke matches the desired version'
   describe command('invoke -V') do
-    its('stdout') { should include ('0.21') }
+    its('stdout') { should include ('0.22') }
   end
 end
 
@@ -194,6 +194,6 @@ control 'inspec version' do
   title 'confirm inspec version installed'
   desc 'confirm version reported by inspec matches the desired version'
   describe command('inspec version') do
-    its('stdout') { should include ('1.48') }
+    its('stdout') { should include ('1.51') }
   end
 end
