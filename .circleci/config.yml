@@ -4,12 +4,12 @@ jobs:
   build:
     working_directory: ~/circleci-remote-docker
     environment:
-      LIBRARY: feedyard
+      LIBRARY: quay.io/feedyard
       CONTAINER_NAME: circleci-remote-docker
       VERSION: 3.8
       BASH_ENV: env
     docker:
-      - image: feedyard/circleci-remote-docker
+      - image: quay.io/feedyard/circleci-remote-docker
     steps:
       - checkout
       - setup_remote_docker
@@ -36,9 +36,6 @@ jobs:
       - deploy:
           name: deploy to docker hub
           command: |
-            docker login -u $DOCKER_USER -p $DOCKER_PASS
-            docker push $LIBRARY/$CONTAINER_NAME:$VERSION.$CIRCLE_BUILD_NUM
-            docker push $LIBRARY/$CONTAINER_NAME:latest
             docker login -u=$FEEDYARD_CIRCLECI_QUAYIO_DEPLOY_USER -p=$FEEDYARD_CIRCLECI_QUAYIO_DEPLOY_USER_TOKEN quay.io
             docker push $LIBRARY/$CONTAINER_NAME:$VERSION.$CIRCLE_BUILD_NUM
             docker push $LIBRARY/$CONTAINER_NAME:latest
