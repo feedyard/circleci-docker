@@ -6,7 +6,7 @@ jobs:
     environment:
       LIBRARY: feedyard
       CONTAINER_NAME: circleci-remote-docker
-      VERSION: 3.7
+      VERSION: 3.8
       BASH_ENV: env
     docker:
       - image: feedyard/circleci-remote-docker
@@ -18,7 +18,8 @@ jobs:
           command: docker info
       - run:
           name: decrypt secrets
-          command: openssl aes-256-cbc -d -in secrets.ci -out env -k $KEY
+          # command: invoke dec
+          command: openssl aes-256-cbc -d -in env.ci -out local.env -k $FEEDYARD_PIPELINE_KEY
       - run:
           name: build image
           command: docker build -t $LIBRARY/$CONTAINER_NAME:latest .
@@ -28,13 +29,16 @@ jobs:
       - run:
           name: configuration tests
           command: |
-            inspec exec profiles/cis-docker
-            CID="$(docker run -it -d $LIBRARY/$CONTAINER_NAME:latest ash)"
+            set -euo pipefail
+            CID="$(docker run -it -d --entrypoint ash $LIBRARY/$CONTAINER_NAME:latest)"
             inspec exec profiles/circleci-remote-docker/ -t docker://$CID
             docker rm -f $CID
       - deploy:
           name: deploy to docker hub
           command: |
             docker login -u $DOCKER_USER -p $DOCKER_PASS
+            docker push $LIBRARY/$CONTAINER_NAME:$VERSION.$CIRCLE_BUILD_NUM
+            docker push $LIBRARY/$CONTAINER_NAME:latest
+            docker login -u=$QUAYIO_USER -p=$QUAYIO_TOKEN quay.io
             docker push $LIBRARY/$CONTAINER_NAME:$VERSION.$CIRCLE_BUILD_NUM
             docker push $LIBRARY/$CONTAINER_NAME:latest

@@ -1,1 +1,1 @@
-inspec profile to confirm configuration of circleci-docker builder image
+inspec profile to confirm configuration of base circleci-docker builder image

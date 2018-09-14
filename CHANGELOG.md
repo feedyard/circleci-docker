@@ -6,287 +6,91 @@ package installs naturally include the dependencies
 
 alpine:3.6
 
-Additional installed packages:
-ca-certificates (20161130-r2)
-git (2.13.0-r0)
-gzip (1.8-r0)
-openssh (7.5_p1-r1)
-tar (1.29-r1)
-curl (7.54.0-r0)
-wget (1.19.1-r2)
-openrc (0.24.1-r2)
-openssl (1.0.2k-r0)
-python3 (3.6.1-r2)
-setuptools (36.0.1)
-docker (17.05.0-r0)
-docker-compose (1.13)
+Additional installed packages:  
+ca-certificates (20161130-r2)  
+git (2.13.0-r0)  
+gzip (1.8-r0)  
+openssh (7.5_p1-r1)  
+tar (1.29-r1)  
+curl (7.54.0-r0)  
+wget (1.19.1-r2)  
+openrc (0.24.1-r2)  
+openssl (1.0.2k-r0)  
+python3 (3.6.1-r2)  
+setuptools (36.0.1)  
+docker (17.05.0-r0)  
+docker-compose (1.13)  
 
 ### 06-11-2017 add ruby and inspec for testing strategies
 
-Additional installed packages:
-ruby (2.4.1-r3)
-ruby-bundler (1.15.0-r0)
-ruby-dev (2.4.1-r3)
-g++ (6.3.0-r4)
-libffi-dev (3.2.1-r3)
-musl-dev (1.1.16-r9)
-make (4.2.1-r0)
-gem install inspec -v 1.27.0
+Additional installed packages:  
+ruby (2.4.1-r3)  
+ruby-bundler (1.15.0-r0)  
+ruby-dev (2.4.1-r3)  
+g++ (6.3.0-r4)  
+libffi-dev (3.2.1-r3)  
+musl-dev (1.1.16-r9)  
+make (4.2.1-r0)  
+gem install inspec -v 1.27.0  
 
 
 ### 08-14-2017 patch//version update
 
-version changes
-git (2.13.5-r0)
-curl (7.55.0-r0)
-setuptools (36.2.7)
-docker-compose (1.15)
-musl-dev (1.1.16-r13)
-gem install inspec -v 1.33.1
+version changes  
+git (2.13.5-r0)  
+curl (7.55.0-r0)  
+setuptools (36.2.7)  
+docker-compose (1.15)  
+musl-dev (1.1.16-r13)  
+gem install inspec -v 1.33.1  
 
 ### 09-03-2017 patch//version update
 
-gem install inspec -v 1.35.1
+gem install inspec -v 1.35.1  
 
 ### 11-16-2017 repository name change, patch, version changes
 
-(1/1) Upgrading apk-tools (2.7.3-r0 -> 2.7.4-r0)
+...removing prior version change history,image reduced to minimum configuration. See next entry.  
 
-(1/13) Installing ca-certificates (20161130-r2)
-(2/13) Installing libssh2 (1.8.0-r1)
-(3/13) Installing libcurl (7.56.1-r0)
-(4/13) Installing expat (2.2.0-r1)
-(5/13) Installing pcre (8.41-r0)
-(6/13) Installing git (2.13.5-r0)
-(7/13) Installing gzip (1.8-r0)
-(8/13) Installing openssh-keygen (7.5_p1-r1)
-(9/13) Installing openssh-client (7.5_p1-r1)
-(10/13) Installing openssh-sftp-server (7.5_p1-r1)
-(11/13) Installing openssh-server (7.5_p1-r1)
-(12/13) Installing openssh (7.5_p1-r1)
-(13/13) Installing tar (1.29-r1)
+### 09-13-2018 Alpine 3.8, minimum remote-docker image requirements
 
-(1/52) Installing ncurses-terminfo-base (6.0_p20170930-r0)
-(2/52) Installing ncurses-terminfo (6.0_p20170930-r0)
-(3/52) Installing ncurses-libs (6.0_p20170930-r0)
-(4/52) Installing readline (6.3.008-r5)
-(5/52) Installing bash (4.3.48-r1)
-(6/52) Installing bash-completion (2.4-r0)
-(7/52) Installing bash-doc (4.3.48-r1)
-(8/52) Installing curl (7.56.1-r0)
-(9/52) Installing libmnl (1.0.4-r0)
-(10/52) Installing libnftnl-libs (1.0.7-r0)
-(11/52) Installing iptables (1.6.1-r0)
-(12/52) Installing device-mapper-libs (2.02.168-r3)
-(13/52) Installing libseccomp (2.3.2-r0)
-(14/52) Installing docker (17.05.0-r0)
-(15/52) Installing docker-bash-completion (17.05.0-r0)
-(16/52) Installing libgcc (6.3.0-r4)
-(17/52) Installing libstdc++ (6.3.0-r4)
-(18/52) Installing binutils-libs (2.28-r3)
-(19/52) Installing binutils (2.28-r3)
-(20/52) Installing gmp (6.1.2-r0)
-(21/52) Installing isl (0.17.1-r0)
-(22/52) Installing libgomp (6.3.0-r4)
-(23/52) Installing libatomic (6.3.0-r4)
-(24/52) Installing pkgconf (1.3.7-r0)
-(25/52) Installing mpfr3 (3.1.5-r0)
-(26/52) Installing mpc1 (1.0.3-r0)
-(27/52) Installing gcc (6.3.0-r4)
-(28/52) Installing musl-dev (1.1.16-r14)
-(29/52) Installing libc-dev (0.7.1-r0)
-(30/52) Installing g++ (6.3.0-r4)
-(31/52) Installing git-bash-completion (2.13.5-r0)
-(32/52) Installing libffi (3.2.1-r3)
-(33/52) Installing libffi-dev (3.2.1-r3)
-(34/52) Installing make (4.2.1-r0)
-(35/52) Installing openrc (0.24.1-r2)
-(36/52) Installing libcrypto1.0 (1.0.2m-r0)
-(37/52) Installing libssl1.0 (1.0.2m-r0)
-(38/52) Installing openssl (1.0.2m-r0)
-(39/52) Installing libbz2 (1.0.6-r5)
-(40/52) Installing gdbm (1.12-r0)
-(41/52) Installing xz-libs (5.2.3-r0)
-(42/52) Installing sqlite-libs (3.20.1-r0)
-(43/52) Installing python3 (3.6.1-r3)
-(44/52) Installing yaml (0.1.7-r0)
-(45/52) Installing ruby-libs (2.4.2-r0)
-(46/52) Installing ruby (2.4.2-r0)
-(47/52) Installing ruby-io-console (2.4.2-r0)
-(48/52) Installing ruby-bundler (1.15.0-r0)
-(49/52) Installing libgmpxx (6.1.2-r0)
-(50/52) Installing gmp-dev (6.1.2-r0)
-(51/52) Installing ruby-dev (2.4.2-r0)
-(52/52) Installing wget (1.19.1-r2)
+alpine:3.8  
 
-setuptools-36.7.2-py2.py3-none-any.whl (482kB)
-invoke-0.21.0-py3-none-any.whl (153kB)
-
-Successfully installed json-2.1.0
-Successfully installed mixlib-shellout-2.3.2
-Successfully installed net-ssh-4.2.0
-Successfully installed net-scp-1.2.1
-Successfully installed ffi-1.9.18
-Successfully installed gssapi-1.2.0
-Successfully installed httpclient-2.8.3
-Successfully installed rubyntlm-0.6.2
-Successfully installed little-plugger-1.1.4
-Successfully installed multi_json-1.12.2
-Successfully installed logging-2.2.2
-Successfully installed nori-2.6.0
-Successfully installed builder-3.2.3
-Successfully installed gyoku-1.3.1
-Successfully installed erubis-2.7.0
-Successfully installed winrm-2.2.3
-Successfully installed rubyzip-1.2.1
-Successfully installed winrm-fs-1.1.0
-Successfully installed excon-0.59.0
-Successfully installed docker-api-1.34.0
-Successfully installed train-0.29.1
-Successfully installed thor-0.20.0
-Successfully installed rake-12.3.0
-Successfully installed rainbow-2.2.2
-Successfully installed method_source-0.9.0
-Successfully installed rspec-support-3.7.0
-Successfully installed rspec-core-3.7.0
-Successfully installed diff-lcs-1.3
-Successfully installed rspec-expectations-3.7.0
-Successfully installed rspec-mocks-3.7.0
-Successfully installed rspec-3.7.0
-Successfully installed rspec-its-1.2.0
-Successfully installed coderay-1.1.2
-Successfully installed pry-0.11.3
-Successfully installed hashie-3.5.6
-Successfully installed mixlib-log-1.7.1
-Successfully installed sslshake-1.2.0
-Successfully installed parallel-1.12.0
-Successfully installed multipart-post-2.0.0
-Successfully installed faraday-0.13.1
-Successfully installed tomlrb-1.2.6
-Successfully installed public_suffix-3.0.1
-Successfully installed addressable-2.5.2
-Successfully installed parslet-1.8.0
-Successfully installed semverse-2.0.0
-Successfully installed htmlentities-4.3.4
-Successfully installed inspec-1.44.8
-
-# 12-17-2017 Alpine 3.7 update
-
-(1/14) Installing ca-certificates (20171114-r0)
-(2/14) Installing libssh2 (1.8.0-r2)
-(3/14) Installing libcurl (7.57.0-r0)
-(4/14) Installing expat (2.2.5-r0)
-(5/14) Installing pcre2 (10.30-r0)
-(6/14) Installing git (2.15.0-r1)
-(7/14) Installing gzip (1.8-r0)
-(8/14) Installing openssh-keygen (7.5_p1-r8)
-(9/14) Installing openssh-client (7.5_p1-r8)
-(10/14) Installing openssh-sftp-server (7.5_p1-r8)
-(11/14) Installing openssh-server-common (7.5_p1-r8)
-(12/14) Installing openssh-server (7.5_p1-r8)
-(13/14) Installing openssh (7.5_p1-r8)
-(14/14) Installing tar (1.29-r1)
-
-(1/54) Installing pkgconf (1.3.10-r0)
-(2/54) Installing ncurses-terminfo-base (6.0_p20170930-r0)
-(3/54) Installing ncurses-terminfo (6.0_p20170930-r0)
-(4/54) Installing ncurses-libs (6.0_p20170930-r0)
-(5/54) Installing readline (7.0.003-r0)
-(6/54) Installing bash (4.4.12-r2)
-(7/54) Installing bash-completion (2.7-r3)
-(8/54) Installing bash-doc (4.4.12-r2)
-(9/54) Installing curl (7.57.0-r0)
-(10/54) Installing libmnl (1.0.4-r0)
-(11/54) Installing jansson (2.10-r0)
-(12/54) Installing libnftnl-libs (1.0.8-r1)
-(13/54) Installing iptables (1.6.1-r1)
-(14/54) Installing device-mapper-libs (2.02.175-r0)
-(15/54) Installing libltdl (2.4.6-r4)
-(16/54) Installing libseccomp (2.3.2-r0)
-(17/54) Installing docker (17.10.0-r0)
-(18/54) Installing docker-bash-completion (17.10.0-r0)
-(19/54) Installing libgcc (6.4.0-r5)
-(20/54) Installing libstdc++ (6.4.0-r5)
-(21/54) Installing binutils-libs (2.28-r3)
-(22/54) Installing binutils (2.28-r3)
-(23/54) Installing gmp (6.1.2-r1)
-(24/54) Installing isl (0.18-r0)
-(25/54) Installing libgomp (6.4.0-r5)
-(26/54) Installing libatomic (6.4.0-r5)
-(27/54) Installing mpfr3 (3.1.5-r1)
-(28/54) Installing mpc1 (1.0.3-r1)
-(29/54) Installing gcc (6.4.0-r5)
-(30/54) Installing musl-dev (1.1.18-r2)
-(31/54) Installing libc-dev (0.7.1-r0)
-(32/54) Installing g++ (6.4.0-r5)
-(33/54) Installing git-bash-completion (2.15.0-r1)
-(34/54) Installing libffi (3.2.1-r4)
-(35/54) Installing libffi-dev (3.2.1-r4)
-(36/54) Installing make (4.2.1-r0)
-(37/54) Installing openrc (0.24.1-r4)
-(38/54) Installing libcrypto1.0 (1.0.2n-r0)
-(39/54) Installing libssl1.0 (1.0.2n-r0)
-(40/54) Installing openssl (1.0.2n-r0)
-(41/54) Installing libbz2 (1.0.6-r6)
-(42/54) Installing gdbm (1.13-r1)
-(43/54) Installing xz-libs (5.2.3-r1)
-(44/54) Installing sqlite-libs (3.21.0-r0)
-(45/54) Installing python3 (3.6.3-r9)
-(46/54) Installing yaml (0.1.7-r0)
-(47/54) Installing ruby-libs (2.4.3-r0)
-(48/54) Installing ruby (2.4.3-r0)
-(49/54) Installing ruby-io-console (2.4.3-r0)
-(50/54) Installing ruby-bundler (1.16.0-r0)
-(51/54) Installing libgmpxx (6.1.2-r1)
-(52/54) Installing gmp-dev (6.1.2-r1)
-(53/54) Installing ruby-dev (2.4.3-r0)
-(54/54) Installing wget (1.19.2-r1)
-
-Downloading setuptools-38.2.4-py2.py3-none-any.whl (489kB)
-Downloading invoke-0.21.0-py3-none-any.whl (153kB)
-
-Successfully installed json-2.1.0
-Successfully installed mixlib-shellout-2.3.2
-Successfully installed net-ssh-4.2.0
-Successfully installed net-scp-1.2.1
-Successfully installed ffi-1.9.18
-Successfully installed gssapi-1.2.0
-Successfully installed httpclient-2.8.3
-Successfully installed rubyntlm-0.6.2
-Successfully installed little-plugger-1.1.4
-Successfully installed multi_json-1.12.2
-Successfully installed logging-2.2.2
-Successfully installed nori-2.6.0
-Successfully installed builder-3.2.3
-Successfully installed gyoku-1.3.1
-Successfully installed erubis-2.7.0
-Successfully installed winrm-2.2.3
-Successfully installed rubyzip-1.2.1
-Successfully installed winrm-fs-1.1.1
-Successfully installed excon-0.60.0
-Successfully installed docker-api-1.34.0
-Successfully installed train-0.31.1
-Successfully installed thor-0.20.0
-Successfully installed method_source-0.9.0
-Successfully installed rspec-support-3.7.0
-Successfully installed rspec-core-3.7.0
-Successfully installed diff-lcs-1.3
-Successfully installed rspec-expectations-3.7.0
-Successfully installed rspec-mocks-3.7.0
-Successfully installed rspec-3.7.0
-Successfully installed rspec-its-1.2.0
-Successfully installed coderay-1.1.2
-Successfully installed pry-0.11.3
-Successfully installed hashie-3.5.6
-Successfully installed mixlib-log-1.7.1
-Successfully installed sslshake-1.2.0
-Successfully installed parallel-1.12.1
-Successfully installed multipart-post-2.0.0
-Successfully installed faraday-0.13.1
-Successfully installed tomlrb-1.2.6
-Successfully installed public_suffix-3.0.1
-Successfully installed addressable-2.5.2
-Successfully installed parslet-1.8.1
-Successfully installed semverse-2.0.0
-Successfully installed htmlentities-4.3.4
-Successfully installed inspec-1.44.8
+Additional installed packages  
+(1/37) Installing ncurses-terminfo-base (6.1_p20180818-r1)  
+(2/37) Installing ncurses-terminfo (6.1_p20180818-r1)  
+(3/37) Installing ncurses-libs (6.1_p20180818-r1)  
+(4/37) Installing readline (7.0.003-r0)  
+(5/37) Installing bash (4.4.19-r1)  
+(6/37) Installing bash-completion (2.8-r0)  
+(7/37) Installing bash-doc (4.4.19-r1)  
+(8/37) Installing ca-certificates (20171114-r3)  
+(9/37) Installing libmnl (1.0.4-r0)  
+(10/37) Installing jansson (2.11-r0)  
+(11/37) Installing libnftnl-libs (1.1.1-r0)  
+(12/37) Installing iptables (1.6.2-r0)  
+(13/37) Installing device-mapper-libs (2.02.178-r0)  
+(14/37) Installing libltdl (2.4.6-r5)  
+(15/37) Installing libseccomp (2.3.3-r1)  
+(16/37) Installing docker (18.06.1-r0)  
+(17/37) Installing docker-bash-completion (18.06.1-r0)  
+(18/37) Installing nghttp2-libs (1.32.0-r0)  
+(19/37) Installing libssh2 (1.8.0-r3)  
+(20/37) Installing libcurl (7.61.1-r0)  
+(21/37) Installing expat (2.2.5-r0)  
+(22/37) Installing pcre2 (10.31-r0)  
+(23/37) Installing git (2.18.0-r0)  
+(24/37) Installing git-bash-completion (2.18.0-r0)  
+(25/37) Installing gzip (1.9-r0)  
+(26/37) Installing openrc (0.35.5-r4)   
+(27/37) Installing docker-openrc (18.06.1-r0)  
+(28/37) Installing openssh-keygen (7.7_p1-r3)  
+(29/37) Installing openssh-client (7.7_p1-r3)  
+(30/37) Installing openssh-sftp-server (7.7_p1-r3)  
+(31/37) Installing openssh-server-common (7.7_p1-r3)  
+(32/37) Installing openssh-server (7.7_p1-r3)  
+(33/37) Installing openssh (7.7_p1-r3)  
+(34/37) Installing libcrypto1.0 (1.0.2o-r2)  
+(35/37) Installing libssl1.0 (1.0.2o-r2)  
+(36/37) Installing openssl (1.0.2o-r2)  
+(37/37) Installing tar (1.30-r0)  
