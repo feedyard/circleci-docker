@@ -22,7 +22,7 @@ control 'git version' do
   title 'confirm git version installed'
   desc 'confirm version reported by git matches the desired version'
   describe command('git version') do
-    its('stdout') { should include ('2.15') }
+    its('stdout') { should include ('2.18') }
   end
 end
 
@@ -31,7 +31,7 @@ control 'openssh version' do
   title 'confirm openssh version installed'
   desc 'confirm version reported by openssh matches the desired version'
   describe command('ssh -V') do
-    its('stderr') { should include ('7.5') }
+    its('stderr') { should include ('7.7') }
   end
 end
 
@@ -40,7 +40,7 @@ control 'tar version' do
   title 'confirm tar version installed'
   desc 'confirm version reported by tar matches the desired version'
   describe command('tar --version') do
-    its('stdout') { should include ('1.29') }
+    its('stdout') { should include ('1.30') }
   end
 end
 
@@ -49,7 +49,7 @@ control 'gzip version' do
   title 'confirm gzip version installed'
   desc 'confirm version reported by gzip matches the desired version'
   describe command('gzip --version') do
-    its('stdout') { should include ('1.8') }
+    its('stdout') { should include ('1.9') }
   end
 end
 
@@ -76,7 +76,7 @@ control 'openrc version' do
   title 'confirm openrc version installed'
   desc 'confirm version reported by openrc matches the desired version'
   describe command('openrc -V') do
-    its('stdout') { should include ('0.24.1') }
+    its('stdout') { should include ('0.35') }
   end
 end
 
@@ -85,6 +85,6 @@ control 'docker version' do
   title 'confirm docker version installed'
   desc 'confirm version reported by docker matches the desired version'
   describe command('docker -v') do
-    its('stdout') { should include ('17.10') }
+    its('stdout') { should include ('18.06') }
   end
 end
