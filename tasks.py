@@ -10,7 +10,7 @@ def dec(ctx, encoded_file='env.ci', file='local.env'):
 
 @task
 def buildlocal(ctx):
-    ctx.run("docker build -t local/di-circleci-infra-agent:latest .")
+    ctx.run("docker build -t local/circleci-remote-docker:latest .")
 
 @task
 def testlocal(ctx):
