@@ -94,3 +94,5 @@ Additional installed packages
 (35/37) Installing libssl1.0 (1.0.2o-r2)  
 (36/37) Installing openssl (1.0.2o-r2)  
 (37/37) Installing tar (1.30-r0)  
+
+invoke commands for local build and test  
