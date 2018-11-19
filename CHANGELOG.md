@@ -96,3 +96,7 @@ Additional installed packages
 (37/37) Installing tar (1.30-r0)  
 
 invoke commands for local build and test  
+
+### 11-19-2018 Patch Build to fix vulnerabilities  
+
+(23/37) Installing git (2.18.1-r0)  
