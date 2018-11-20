@@ -1,34 +1,18 @@
 version: 2.1
 
 orbs:
-  docker-publish: feedyard/orb-docker-publish@dev:0.1.5-rc1
-
-jobs:
-
-  build-and-publish:
-    executor: docker-publish/circleci-base
-    working_directory: ~/circleci-remote-docker
-    steps:
-      - docker-publish/publish
-
-  release:
-    executor: docker-publish/circleci-base
-    working_directory: ~/circleci-remote-docker
-    steps:
-    - docker-publish/release
+  docker-agents: feedyard/docker-agents@dev:0.0.0-rc1
 
 workflows:
-  publish-and-release-docker-image:
+  circleci-remote-docker-image-pipeline:
     jobs:
-    - docker-publish/publish:
+    - docker-agents/publish:
         filters:
           branches:
             only: master
           tags:
             ignore: /.*/
-    - docker-publish/release:
-#        requires:
-#        - build-and-publish
+    - docker-agents/release:
         filters:
           branches:
             ignore: /.*/
