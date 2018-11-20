@@ -1,74 +1,20 @@
 version: 2.1
 
 orbs:
-  docker-agents: feedyard/docker-agents@dev:0.0.0-rc1
+  docker-agents: feedyard/docker-agents@dev:0.0.7-rc1
 
 workflows:
   circleci-remote-docker-image-pipeline:
     jobs:
-    - docker-agents/publish:
-        filters:
-          branches:
-            only: master
-          tags:
-            ignore: /.*/
-    - docker-agents/release:
-        filters:
-          branches:
-            ignore: /.*/
-          tags:
-            only: /.*/
-
-
-
-
-
-
-
-
-#executors:
-#  circleci-base:
-#    working_directory: ~/circleci-remote-docker
-#    docker:
-#      - image: quay.io/feedyard/circleci-base-agent
-#    environment:
-#      LIBRARY: quay.io/feedyard
-#      CONTAINER_NAME: circleci-remote-docker
-#      VERSION: 3.8
-#      BASH_ENV: local.env
-#
-#jobs:
-#  build:
-#    executor: circleci-base
-#    steps:
-#      - checkout
-#      - setup_remote_docker
-#      - run:
-#          name: confirm Docker
-#          command: docker info
-#      - run:
-#          name: decrypt secrets
-#          command: invoke dec
-#      - run:
-#          name: build image
-#          command: docker build -t $LIBRARY/$CONTAINER_NAME:latest .
-#      - run:
-#          name: tag with build version
-#          command: docker tag $LIBRARY/$CONTAINER_NAME:latest $LIBRARY/$CONTAINER_NAME:$VERSION.$CIRCLE_BUILD_NUM
-#      - run:
-#          name: configuration tests
-#          command: |
-#            set -euo pipefail
-#            inspec exec --no-distinct-exit profiles/cis-docker
-#            CID="$(docker run -it -d --entrypoint ash $LIBRARY/$CONTAINER_NAME:latest)"
-#            inspec exec profiles/$CONTAINER_NAME/ -t docker://$CID
-#            docker rm -f $CID
-#      - deploy:
-#          name: deploy to quay.io
-#          command: |
-#            echo "$FEEDYARD_CIRCLECI_QUAYIO_DEPLOY_USER_TOKEN" | docker login -u $FEEDYARD_CIRCLECI_QUAYIO_DEPLOY_USER --password-stdin quay.io
-#            docker push $LIBRARY/$CONTAINER_NAME:$VERSION.$CIRCLE_BUILD_NUM
-#            docker push $LIBRARY/$CONTAINER_NAME:latest
-
-
-  #echo "$MY_PASSWORD" | docker login --username foo --password-stdin
+      - docker-agents/publish:
+          filters:
+            branches:
+              only: master
+            tags:
+              ignore: /.*/
+      - docker-agents/release:
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /.*/
