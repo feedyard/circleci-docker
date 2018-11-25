@@ -3,17 +3,11 @@ control 'packages' do
   title 'confirm package installation'
   desc 'confirm all desired packages are installed'
   describe command('apk info') do
-    its('stdout') { should include ('git') }
     its('stdout') { should include ('openssh') }
     its('stdout') { should include ('tar') }
     its('stdout') { should include ('gzip') }
     its('stdout') { should include ('ca-certificates') }
-    its('stdout') { should include ('bash') }
-    its('stdout') { should include ('bash-doc') }
-    its('stdout') { should include ('bash-completion') }
-    its('stdout') { should include ('openssl') }
-    its('stdout') { should include ('openrc') }
-    its('stdout') { should include ('docker') }
+    its('stdout') { should include ('curl') }
   end
 end
 
@@ -53,15 +47,6 @@ control 'gzip version' do
   end
 end
 
-control 'bash version' do
-  impact 1.0
-  title 'confirm bash version installed'
-  desc 'confirm version reported by bash matches the desired version'
-  describe command('bash --version') do
-    its('stdout') { should include ('4.4') }
-  end
-end
-
 control 'openssl version' do
   impact 1.0
   title 'confirm openssl version installed'
@@ -71,20 +56,11 @@ control 'openssl version' do
   end
 end
 
-control 'openrc version' do
+control 'circleci-cli version' do
   impact 1.0
-  title 'confirm openrc version installed'
-  desc 'confirm version reported by openrc matches the desired version'
-  describe command('openrc -V') do
-    its('stdout') { should include ('0.35') }
-  end
-end
-
-control 'docker version' do
-  impact 1.0
-  title 'confirm docker version installed'
-  desc 'confirm version reported by docker matches the desired version'
-  describe command('docker -v') do
-    its('stdout') { should include ('18.06') }
+  title 'confirm circleci-cli version installed'
+  desc 'confirm version reported by circleci-cli matches the desired version'
+  describe command('circleci-cli version') do
+    its('stdout') { should include ('0.1.4180') }
   end
 end
