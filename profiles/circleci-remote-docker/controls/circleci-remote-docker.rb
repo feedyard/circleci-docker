@@ -3,11 +3,12 @@ control 'packages' do
   title 'confirm package installation'
   desc 'confirm all desired packages are installed'
   describe command('apk info') do
+    its('stdout') { should include ('git') }
     its('stdout') { should include ('openssh') }
+    its('stdout') { should include ('openssl') }
     its('stdout') { should include ('tar') }
     its('stdout') { should include ('gzip') }
     its('stdout') { should include ('ca-certificates') }
-    its('stdout') { should include ('curl') }
   end
 end
 
@@ -29,6 +30,15 @@ control 'openssh version' do
   end
 end
 
+control 'openssl version' do
+  impact 1.0
+  title 'confirm openssl version installed'
+  desc 'confirm version reported by openssl matches the desired version'
+  describe command('openssl version') do
+    its('stdout') { should include ('1.0.2') }
+  end
+end
+
 control 'tar version' do
   impact 1.0
   title 'confirm tar version installed'
@@ -44,23 +54,5 @@ control 'gzip version' do
   desc 'confirm version reported by gzip matches the desired version'
   describe command('gzip --version') do
     its('stdout') { should include ('1.9') }
-  end
-end
-
-control 'openssl version' do
-  impact 1.0
-  title 'confirm openssl version installed'
-  desc 'confirm version reported by openssl matches the desired version'
-  describe command('openssl version') do
-    its('stdout') { should include ('1.0.2') }
-  end
-end
-
-control 'circleci-cli version' do
-  impact 1.0
-  title 'confirm circleci-cli version installed'
-  desc 'confirm version reported by circleci-cli matches the desired version'
-  describe command('circleci version') do
-    its('stdout') { should include ('0.1.4180') }
   end
 end

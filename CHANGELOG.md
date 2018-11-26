@@ -104,28 +104,26 @@ invoke commands for local build and test
 Change to actual semantic versioning  
 Adopt circleci Orbs in pipeline workflows  
 
-### 11-25-2018 Reset base packages based on current circleci required and added circleci cli
+### 11-25-2018 Reset base packages based on current circleci required
 
 alpine:3.8  
   
-(1/19) Installing ca-certificates (20171114-r3)  
-(2/19) Installing nghttp2-libs (1.32.0-r0)  
-(3/19) Installing libssh2 (1.8.0-r3)  
-(4/19) Installing libcurl (7.61.1-r1)  
-(5/19) Installing curl (7.61.1-r1)  
-(6/19) Installing expat (2.2.5-r0)  
-(7/19) Installing pcre2 (10.31-r0)  
-(8/19) Installing git (2.18.1-r0)  
-(9/19) Installing gzip (1.9-r0)  
-(10/19) Installing openssh-keygen (7.7_p1-r3)    
-(11/19) Installing openssh-client (7.7_p1-r3)  
-(12/19) Installing openssh-sftp-server (7.7_p1-r3)  
-(13/19) Installing openssh-server-common (7.7_p1-r3)  
-(14/19) Installing openssh-server (7.7_p1-r3)  
-(15/19) Installing openssh (7.7_p1-r3)  
-(16/19) Installing libcrypto1.0 (1.0.2q-r0)  
-(17/19) Installing libssl1.0 (1.0.2q-r0)  
-(18/19) Installing openssl (1.0.2q-r0)  
-(19/19) Installing tar (1.30-r0)  
-  
-circleci-cli_0.1.4180  
+(1/18) Installing ca-certificates (20171114-r3)  
+(2/18) Installing nghttp2-libs (1.32.0-r0)  
+(3/18) Installing libssh2 (1.8.0-r3)  
+(4/18) Installing libcurl (7.61.1-r1)  
+(5/18) Installing expat (2.2.5-r0)  
+(6/18) Installing pcre2 (10.31-r0)  
+(7/18) Installing git (2.18.1-r0)  
+(8/18) Installing gzip (1.9-r0)  
+(9/18) Installing openssh-keygen (7.7_p1-r3)  
+(10/18) Installing openssh-client (7.7_p1-r3)  
+(11/18) Installing openssh-sftp-server (7.7_p1-r3)  
+(12/18) Installing openssh-server-common (7.7_p1-r3)  
+(13/18) Installing openssh-server (7.7_p1-r3)  
+(14/18) Installing openssh (7.7_p1-r3)  
+(15/18) Installing libcrypto1.0 (1.0.2q-r0)  
+(16/18) Installing libssl1.0 (1.0.2q-r0)  
+(17/18) Installing openssl (1.0.2q-r0)  
+(18/18) Installing tar (1.30-r0)  
+
