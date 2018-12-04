@@ -11,6 +11,9 @@ RUN apk add --no-cache \
     openssl \
     tar \
     gzip \
+    bash \
+    bash-doc \
+    bash-completion \
     ca-certificates
 
 HEALTHCHECK NONE

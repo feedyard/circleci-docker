@@ -127,3 +127,8 @@ alpine:3.8
 (17/18) Installing openssl (1.0.2q-r0)  
 (18/18) Installing tar (1.30-r0)  
 
+### 12-03-2018 Re-introduced bash to the remote worker base for maximum Alpine compatibility
+
+bash (4.4.19-r1)  
+bash-completion (2.8-r0)  
+bash-doc (4.4.19-r1)  
