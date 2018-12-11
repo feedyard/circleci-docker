@@ -13,9 +13,9 @@ workflows:
               only: master
             tags:
               ignore: /.*/
-#      - circle-agent/publish:
-#          filters:
-#            branches:
-#              ignore: /.*/
-#            tags:
-#              only: /.*/
+      - circle-agent/publish:
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /.*/
