@@ -132,3 +132,5 @@ alpine:3.8
 bash (4.4.19-r1)  
 bash-completion (2.8-r0)  
 bash-doc (4.4.19-r1)  
+
+### 12-10-2018 no changes to image. Updating .circleci.config.yml to use new orbs

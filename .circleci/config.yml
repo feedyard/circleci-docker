@@ -1,18 +1,19 @@
 version: 2.1
 
 orbs:
-  docker-agents: feedyard/docker-agents@dev:0.0.7-rc1
+  circle-agent: feedyard/circleci-agent-publish@dev:latest
+  # docker-agents: feedyard/docker-agents@dev:0.0.7-rc1
 
 workflows:
   circleci-remote-docker-image-pipeline:
     jobs:
-      - docker-agents/publish:
+      - circle-agent/dev-release:
           filters:
             branches:
               only: master
             tags:
               ignore: /.*/
-      - docker-agents/release:
+      - circle-agent/publish:
           filters:
             branches:
               ignore: /.*/
