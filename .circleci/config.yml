@@ -13,7 +13,7 @@ workflows:
               only: master
             tags:
               ignore: /.*/
-      - circle-agent/publish:
+      - circle-agent/dev-release:
           filters:
             branches:
               ignore: /.*/
