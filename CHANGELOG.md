@@ -161,3 +161,5 @@ bash-doc (4.4.19-r1)
 (24/26) Installing libssl1.0 (1.0.2q-r0)  
 (25/26) Installing openssl (1.0.2q-r0)  
 (26/26) Installing tar (1.30-r0)  
+
+### 01-05-2019 patch build and remove bash-doc, bash-completion
