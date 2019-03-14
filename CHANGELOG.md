@@ -163,3 +163,28 @@ bash-doc (4.4.19-r1)
 (26/26) Installing tar (1.30-r0)  
 
 ### 01-05-2019 patch build and remove bash-doc, bash-completion
+
+### 03-14-2019 alpine version change and patch build  
+
+(1/22) Installing ncurses-terminfo-base (6.1_p20190105-r0)  
+(2/22) Installing ncurses-terminfo (6.1_p20190105-r0)  
+(3/22) Installing ncurses-libs (6.1_p20190105-r0)  
+(4/22) Installing readline (7.0.003-r1)  
+(6/22) Installing ca-certificates (20190108-r0)  
+(7/22) Installing nghttp2-libs (1.35.1-r0)  
+(8/22) Installing libssh2 (1.8.0-r4)  
+(9/22) Installing libcurl (7.64.0-r1)  
+(10/22) Installing expat (2.2.6-r0)  
+(11/22) Installing pcre2 (10.32-r1)  
+(12/22) Installing git (2.20.1-r0)  
+(13/22) Installing gzip (1.10-r0)  
+(14/22) Installing openssh-keygen (7.9_p1-r4)  
+(15/22) Installing libedit (20181209.3.1-r0)  
+(16/22) Installing openssh-client (7.9_p1-r4)  
+(17/22) Installing openssh-sftp-server (7.9_p1-r4)  
+(18/22) Installing openssh-server-common (7.9_p1-r4)  
+(19/22) Installing openssh-server (7.9_p1-r4)  
+(20/22) Installing openssh (7.9_p1-r4)  
+(21/22) Installing openssl (1.1.1a-r1)  
+(22/22) Installing tar (1.32-r0)  
+
