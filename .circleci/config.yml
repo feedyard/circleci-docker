@@ -8,13 +8,14 @@ workflows:
   di-circleci-remote-docker-image-pipeline:
     jobs:
       - circle-agent/dev-release:
+          registry: quay.io
           after_build:
             - run:
                 name: configuration testing of the image
                 command: |
                   set -euo pipefail
                   inspec exec --no-distinct-exit profiles/cis-docker
-                  CID="$(docker run -it -d --entrypoint bash << parameters.registry >>/<< parameters.image >>:<< parameters.tag >>)"
+                  CID="$(docker run -it -d --entrypoint bash quay.io/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME:$CIRCLE_SHA1)"
                   inspec exec profiles/circleci-remote-docker/ -t docker://$CID
                   docker rm -f $CID
           filters:
