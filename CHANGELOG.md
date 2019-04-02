@@ -198,6 +198,7 @@ alpine:3.9.2
 (3/4) Upgrading libssl1.1 (1.1.1a-r1 -> 1.1.1b-r1)
 (4/4) Upgrading musl-utils (1.1.20-r3 -> 1.1.20-r4)
 
+* package installs
 (1/19) Installing ca-certificates (20190108-r0)
 (2/19) Installing nghttp2-libs (1.35.1-r0)
 (3/19) Installing libssh2 (1.8.2-r0)
