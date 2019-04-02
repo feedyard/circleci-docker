@@ -7,10 +7,8 @@ RUN apk update && apk upgrade && \
     apk add --no-cache \
     git \
     openssh \
-    openssl \
     tar \
     gzip \
-    bash \
     ca-certificates
 
 HEALTHCHECK NONE

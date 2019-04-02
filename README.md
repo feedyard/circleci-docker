@@ -2,19 +2,13 @@
 [![Docker Repository on Quay](https://quay.io/repository/feedyard/circleci-remote-docker/status "Docker Repository on Quay")](https://quay.io/repository/feedyard/circleci-remote-docker)
 # feedyard/circleci-remote-docker
 
-Minimum docker image configuration, based on alpine linux, for use as a primary container in a circleci  
-setup_remote_docker pipeline.  
+Minimum docker image configuration, based on alpine linux, for use as a primary container in a circleci
+setup_remote_docker pipeline.
 
-See CHANGELOG for list of installed packages/versions  
+See CHANGELOG for list of installed packages/versions
 
 ## requirements for ci and local development
 
-Environment variable FEEDYARD_PIPELINE_KEY used as encrypt/decrypt key for required secrets. Set matching var in  
-circleci repository and include local file `local.env` with the following access information.  
+Uses circleci orb feedyard/circleci-agent-publish. See orb for requirements.
 
-```$xslt
-DOCKER_LOGIN=FEEDYARD_CIRCLECI_QUAYIO_DEPLOY_USER
-DOCKER_PASSWORD=FEEDYARD_CIRCLECI_QUAYIO_DEPLOY_USER_TOKEN
-```
-
-run (or review) `prereqs.sh` to install requirements for local development.  
+run (or review) `prereqs.sh` to install requirements for local development.

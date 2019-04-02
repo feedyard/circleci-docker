@@ -2,12 +2,21 @@
 version: 2.1
 
 orbs:
-  circle-agent: feedyard/circleci-agent-publish@0.1.0
+  circle-agent: feedyard/circleci-agent-publish@dev:latest
 
 workflows:
-  circleci-remote-docker-image-pipeline:
+  di-circleci-remote-docker-image-pipeline:
     jobs:
       - circle-agent/dev-release:
+          after_build:
+            - run:
+                name: configuration testing of the image
+                command: |
+                  set -euo pipefail
+                  inspec exec --no-distinct-exit profiles/cis-docker
+                  CID="$(docker run -it -d --entrypoint bash << parameters.registry >>/<< parameters.image >>:<< parameters.tag >>)"
+                  inspec exec profiles/circleci-remote-docker/ -t docker://$CID
+                  docker rm -f $CID
           filters:
             branches:
               only: master

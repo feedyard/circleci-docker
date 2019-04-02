@@ -5,10 +5,8 @@ control 'packages' do
   describe command('apk info') do
     its('stdout') { should include ('git') }
     its('stdout') { should include ('openssh') }
-    its('stdout') { should include ('openssl') }
     its('stdout') { should include ('tar') }
     its('stdout') { should include ('gzip') }
-    its('stdout') { should include ('bash') }
     its('stdout') { should include ('ca-certificates') }
   end
 end
@@ -31,15 +29,6 @@ control 'openssh version' do
   end
 end
 
-control 'openssl version' do
-  impact 1.0
-  title 'confirm openssl version installed'
-  desc 'confirm version reported by openssl matches the desired version'
-  describe command('openssl version') do
-    its('stdout') { should include ('1.1.1') }
-  end
-end
-
 control 'tar version' do
   impact 1.0
   title 'confirm tar version installed'
@@ -55,14 +44,5 @@ control 'gzip version' do
   desc 'confirm version reported by gzip matches the desired version'
   describe command('gzip --version') do
     its('stdout') { should include ('1.10') }
-  end
-end
-
-control 'bash version' do
-  impact 1.0
-  title 'confirm bash version installed'
-  desc 'confirm version reported by bash matches the desired version'
-  describe command('bash --version') do
-    its('stdout') { should include ('4.4') }
   end
 end
