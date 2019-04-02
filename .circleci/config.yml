@@ -8,6 +8,7 @@ workflows:
   circleci-remote-docker-image-pipeline:
     jobs:
       - circle-agent/dev-release:
+          context: ci
           registry: quay.io
           after_build:
             - run:
@@ -24,6 +25,7 @@ workflows:
             tags:
               ignore: /.*/
       - circle-agent/publish:
+          context: ci
           registry: quay.io
           filters:
             branches:
