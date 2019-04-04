@@ -1,12 +1,6 @@
-.gitignore
-CHANGELOG.md
-env.ci
-LICENSE
+.*
 prereqs.sh
-README.md
+profiles/
 requirements.txt
 tasks.py
 testlocal.sh
-
-*.env
-

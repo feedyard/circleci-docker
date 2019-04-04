@@ -5,7 +5,7 @@
 Minimum docker image configuration, based on alpine linux, for use as a primary container in a circleci
 setup_remote_docker pipeline.
 
-See CHANGELOG for list of installed packages/versions
+See CHANGELOG for detailed list of installed packages/versions per versioned build
 
 ## requirements for ci and local development
 

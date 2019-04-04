@@ -188,7 +188,7 @@ bash-doc (4.4.19-r1)
 (21/22) Installing openssl (1.1.1a-r1)
 (22/22) Installing tar (1.32-r0)
 
-### 04-01-2019 reduce package to actual minimum circleci requirements
+### 04-01-2019 publish version 4.3.1
 
 alpine:3.9.2
 
