@@ -12,3 +12,12 @@ See CHANGELOG for detailed list of installed packages/versions per versioned bui
 Uses circleci orb feedyard/circleci-agent-publish. See orb for requirements.
 
 run (or review) `prereqs.sh` to install requirements for local development.
+
+
+
+updates
+
+-get prereqs more in line with how i use my system
+-have a cron job that checks for new alpine releases somehow
+-when alpine releases a new version, perhaps trigger a new base
+-what if i then set the base version number of this to be equal to  - yeah but alpine still has package patches, etc

@@ -10,6 +10,10 @@ workflows:
       - circle-agent/dev-release:
           context: ci
           registry: quay.io
+          after_checkout:
+            - run:
+                name: Dockerfile lint
+                command: hadolint Dockerfile
           after_build:
             - run:
                 name: configuration testing of the image
