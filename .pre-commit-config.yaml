@@ -21,4 +21,4 @@ repos:
         name: hadolint
         entry: hadolint
         language: system
-        files: ^Dockerfile/
+        files: ^Dockerfile
