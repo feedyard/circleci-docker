@@ -22,4 +22,3 @@ repos:
         entry: hadolint
         language: system
         files: ^Dockerfile
-        type: [file]
