@@ -16,7 +16,7 @@ workflows:
                 command: hadolint Dockerfile
           after_build:
             - run:
-                name: configuration testing of the image
+                name: InSpec tests of docker image configuration
                 command: |
                   set -euo pipefail
                   inspec exec --no-distinct-exit profiles/cis-docker
