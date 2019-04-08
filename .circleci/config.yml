@@ -12,7 +12,7 @@ workflows:
           registry: quay.io
           after_checkout:
             - run:
-                name: Dockerfile lint
+                name: Lint Dockerfile
                 command: hadolint Dockerfile
           after_build:
             - run:
