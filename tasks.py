@@ -16,7 +16,7 @@ def evalpackages(ctx):
     ctx.run('docker rmi local/circleci-remote-docker:pinned >> result_log.pinned')
     ctx.run('docker rmi local/circleci-remote-docker:latest >> result_log.latest')
     with open('result_log.latest', 'rU') as f_latest:
-        print('%-25s %-20s %-20s') %('PACKAGE', 'LATEST', "PINNED")
+        print('{0:20} {1:20} {2:20}'.format('PACKAGE', 'LATEST', 'PINNED'))
         for line_latest in f_latest:
             if 'Installing' in line_latest:
                 pkg_installed = re.search("Installing (.*)", line_latest).group(1)
@@ -32,4 +32,4 @@ def evalpackages(ctx):
                                 pvg_version_pinned = re.search(re.escape('(')+"(.*)"+re.escape(')'),pkg_installed).group(1)
                                 break
                 if pvg_version_latest != pvg_version_pinned:
-                    print('%-25s %-20s \x1b[1;31;40m%-20s\x1b[0m') %(pkg_name_lastest, pvg_version_latest, pvg_version_pinned)
+                    print('{0:20} {1:20} \x1b[1;31;40m{2:20}\x1b[0m'.format(pkg_name_lastest, pvg_version_latest, pvg_version_pinned))

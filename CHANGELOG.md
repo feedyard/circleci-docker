@@ -218,3 +218,7 @@ alpine:3.9.2
 (17/19) Installing openssh-server (7.9_p1-r4)
 (18/19) Installing openssh (7.9_p1-r4)
 (19/19) Installing tar (1.32-r0)
+
+### 05-18-2019 package update
+
+openssh (7.9_p1-r5)
