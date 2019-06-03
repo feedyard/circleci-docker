@@ -11,6 +11,7 @@ workflows:
   circleci-remote-docker-executor-pipeline:
     jobs:
       - executor-tools/dev-release:
+          context: executor-publishing
           image: circleci-remote-docker
           registry: quay.io
           after-build:
@@ -28,6 +29,7 @@ workflows:
             tags:
               ignore: /.*/
       - executor-tools/publish:
+          context: executor-publishing
           image: circleci-remote-docker
           registry: quay.io
           after-publish:
