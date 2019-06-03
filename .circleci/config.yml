@@ -35,7 +35,7 @@ workflows:
           after-publish:
             - common/slack:
                 title: New Executor Version
-                message: 'a new version of the circleci-remote-docker image has been published'
+                message: new version published feedyard/circleci-remote-docker $CIRCLE_TAG
                 webhook: $SLACK_WEBHOOK
           filters:
             branches:
