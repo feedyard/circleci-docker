@@ -41,7 +41,7 @@ workflows:
           clean-tags:
             - executor-tools/clean-quay:
                 image: feedyard/circleci-remote-docker
-                bearer-token: $QUAYIO_BEARER_TOKEN
+                bearer-token: QUAYIO_BEARER_TOKEN
           filters:
             branches:
               ignore: /.*/
