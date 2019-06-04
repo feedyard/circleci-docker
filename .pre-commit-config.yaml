@@ -21,4 +21,5 @@ repos:
         name: hadolint
         entry: hadolint
         language: system
+        exclude: ^Dockerfile.unpinned
         files: ^Dockerfile

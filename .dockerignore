@@ -1,5 +1,5 @@
 .*
-prereqs.sh
+Gemfile
 profiles/
 requirements.txt
 tasks.py
