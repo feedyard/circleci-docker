@@ -45,6 +45,14 @@ workflows:
 
   # builds nightly from .unpinned Dockerfile in order to always be a latest for base image and packages
   circleci-remote-docker-executor-nightly-build:
+    triggers:
+      - schedule:
+          cron: "0 0 1 * *"
+          filters:
+            branches:
+              only: master
+            tags:
+              ignore: /.*/
     jobs:
       - executor-tools/dev-release:
           context: executor-publishing
@@ -60,11 +68,3 @@ workflows:
                   CID="$(docker run -it -d --entrypoint ash quay.io/feedyard/circleci-remote-docker:nightly"
                   inspec exec profiles/circleci-remote-docker-unpinned/ -t docker://$CID
                   docker rm -f $CID
-          triggers:
-            - schedule:
-                cron: "0 0 1 * *"
-                filters:
-                  branches:
-                    only: master
-                  tags:
-                    ignore: /.*/
