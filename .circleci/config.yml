@@ -38,6 +38,10 @@ workflows:
                 title: New Executor Version
                 message: new version published feedyard/circleci-remote-docker $CIRCLE_TAG
                 webhook: $SLACK_WEBHOOK
+          clean-tags:
+            - clean-quay:
+                image: feedyard/circleci-remote-docker
+                bearer-token: $QUAYIO_BEARER_TOKEN
           filters:
             branches:
               ignore: /.*/
