@@ -11,6 +11,7 @@ workflows:
   circleci-remote-docker-executor-pipeline:
     jobs:
       - executor-tools/dev-release:
+          name: dev-release
           context: executor-publishing
           image: feedyard/circleci-remote-docker
           registry: quay.io
@@ -20,7 +21,7 @@ workflows:
                 command: |
                   set -euo pipefail
                   inspec exec --no-distinct-exit profiles/cis-docker
-                  CID="$(docker run -it -d --entrypoint ash quay.io/feedyard/circleci-remote-docker:$CIRCLE_SHA1)"
+                  CID="$(docker run -it -d --entrypoint ash quay.io/feedyard/circleci-remote-docker:dev$CIRCLE_SHA1)"
                   inspec exec profiles/circleci-remote-docker/ -t docker://$CID
                   docker rm -f $CID
           filters:
@@ -45,14 +46,15 @@ workflows:
 
   # builds nightly from .unpinned Dockerfile in order to always be a latest for base image and packages
   circleci-remote-docker-executor-nightly-build:
-    triggers:
-      - schedule:
-          cron: "0 0 1 * *"
-          filters:
-            branches:
-              only: master
+#    triggers:
+#      - schedule:
+#          cron: "0 0 1 * *"
+#          filters:
+#            branches:
+#              only: master
     jobs:
       - executor-tools/dev-release:
+          name: nightly-build
           context: executor-publishing
           image: feedyard/circleci-remote-docker
           tag: nightly
