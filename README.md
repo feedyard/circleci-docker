@@ -4,3 +4,4 @@ Minimum docker image configuration, based on alpine linux, for use as a primary 
 setup_remote_docker pipeline.
 
 See CHANGELOG for detailed list of installed packages/versions per versioned build
+#
