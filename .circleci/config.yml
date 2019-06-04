@@ -51,8 +51,6 @@ workflows:
           filters:
             branches:
               only: master
-            tags:
-              ignore: /.*/
     jobs:
       - executor-tools/dev-release:
           context: executor-publishing
