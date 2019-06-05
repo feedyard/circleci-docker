@@ -4,4 +4,3 @@ Minimum necessary docker image configuration, based on alpine linux, for use as 
 a circleci workflow.
 
 See CHANGELOG for detailed list of installed packages/versions per versioned build
-
