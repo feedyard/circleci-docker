@@ -49,7 +49,7 @@ workflows:
             tags:
               only: /.*/
 
-  # builds nightly from .unpinned Dockerfile in order to always be a latest for base image and installed packages
+  # builds nightly from .unpinned Dockerfile in order to always be a latest base image and installed packages
   circleci-remote-docker-executor-nightly-build:
     triggers:
       - schedule:
