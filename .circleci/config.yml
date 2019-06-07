@@ -26,7 +26,7 @@ workflows:
                   docker rm -f $CID
           filters:
             branches:
-              only: master
+              only: /master/
             tags:
               ignore: /.*/
       - executor-tools/publish:
@@ -55,7 +55,7 @@ workflows:
           cron: "0 0 1 * *"
           filters:
             branches:
-              only: master
+              only: /master/
     jobs:
       - executor-tools/dev-release:
           name: nightly-build
