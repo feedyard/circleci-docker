@@ -61,6 +61,7 @@ workflows:
           name: nightly-build
           context: executor-publishing
           image: feedyard/circleci-remote-docker
+          dockerfile: Dockerfile.unpinned
           tag: nightly
           registry: quay.io
           after-build:
