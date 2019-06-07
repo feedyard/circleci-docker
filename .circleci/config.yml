@@ -20,6 +20,7 @@ workflows:
                 name: configuration testing
                 command: |
                   set -euo pipefail
+                  whoami
                   inspec exec --no-distinct-exit accept-silent profiles/cis-docker
                   CID="$(docker run -it -d --entrypoint ash quay.io/feedyard/circleci-remote-docker:dev.$CIRCLE_SHA1)"
                   inspec exec profiles/circleci-remote-docker/ -t docker://$CID
