@@ -52,10 +52,11 @@ workflows:
   circleci-remote-docker-executor-nightly-build:
     triggers:
       - schedule:
-          cron: "51 6 * * *"
+          cron: "10 7 * * *"
           filters:
             branches:
-              only: /master/
+              only:
+                - master
     jobs:
       - executor-tools/dev-release:
           name: nightly-build
