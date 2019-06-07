@@ -222,3 +222,13 @@ alpine:3.9.2
 ### 05-18-2019 package update
 
 openssh (7.9_p1-r5)
+
+### 06-07-2019 base image and package updates
+
+(4/19) Installing libcurl (7.64.0-r2)
+(9/19) Installing openssh-keygen (7.9_p1-r5)
+(14/19) Installing openssh-client (7.9_p1-r5)
+(15/19) Installing openssh-sftp-server (7.9_p1-r5)
+(16/19) Installing openssh-server-common (7.9_p1-r5)
+(17/19) Installing openssh-server (7.9_p1-r5)
+(18/19) Installing openssh (7.9_p1-r5)

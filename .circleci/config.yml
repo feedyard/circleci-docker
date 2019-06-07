@@ -52,7 +52,7 @@ workflows:
   circleci-remote-docker-executor-nightly-build:
     triggers:
       - schedule:
-          cron: "0 0 1 * *"
+          cron: "*/5 * * * *" #0 0 1 * *
           filters:
             branches:
               only: /master/
