@@ -232,3 +232,7 @@ openssh (7.9_p1-r5)
 (16/19) Installing openssh-server-common (7.9_p1-r5)
 (17/19) Installing openssh-server (7.9_p1-r5)
 (18/19) Installing openssh (7.9_p1-r5)
+
+### 06-19-2019 release version 5.2.0
+
+alpine:3.9.4
