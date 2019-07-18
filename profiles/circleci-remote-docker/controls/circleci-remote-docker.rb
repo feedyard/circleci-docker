@@ -16,7 +16,7 @@ control 'git version' do
   title 'confirm git version installed'
   desc 'confirm version reported by git matches the desired version'
   describe command('git version') do
-    its('stdout') { should include ('2.20') }
+    its('stdout') { should include ('2.22') }
   end
 end
 
@@ -25,7 +25,7 @@ control 'openssh version' do
   title 'confirm openssh version installed'
   desc 'confirm version reported by openssh matches the desired version'
   describe command('ssh -V') do
-    its('stderr') { should include ('7.9') }
+    its('stderr') { should include ('8.0') }
   end
 end
 

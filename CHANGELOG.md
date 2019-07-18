@@ -236,3 +236,22 @@ openssh (7.9_p1-r5)
 ### 06-19-2019 release version 5.2.0
 
 alpine:3.9.4
+
+### 07-18-2019 release version 5.3.0
+
+alpine:3.10.1
+
+(2/18) Installing nghttp2-libs (1.38.0-r0)
+(3/18) Installing libcurl (7.65.1-r0)
+(5/18) Installing pcre2 (10.33-r0)
+(6/18) Installing git (2.22.0-r0)
+(8/18) Installing openssh-keygen (8.0_p1-r0)
+(9/18) Installing ncurses-terminfo-base (6.1_p20190518-r0)
+(10/18) Installing ncurses-terminfo (6.1_p20190518-r0)
+(11/18) Installing ncurses-libs (6.1_p20190518-r0)
+(12/18) Installing libedit (20190324.3.1-r0)
+(13/18) Installing openssh-client (8.0_p1-r0)
+(14/18) Installing openssh-sftp-server (8.0_p1-r0)
+(15/18) Installing openssh-server-common (8.0_p1-r0)
+(16/18) Installing openssh-server (8.0_p1-r0)
+(17/18) Installing openssh (8.0_p1-r0)
