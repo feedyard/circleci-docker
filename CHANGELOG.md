@@ -255,3 +255,7 @@ alpine:3.10.1
 (15/18) Installing openssh-server-common (8.0_p1-r0)
 (16/18) Installing openssh-server (8.0_p1-r0)
 (17/18) Installing openssh (8.0_p1-r0)
+
+### 08-26-2019 release version 5.3.1
+
+alpine 3.10.2 base image
