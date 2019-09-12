@@ -4,7 +4,7 @@ Based on Alpine linux, a Docker image including the required packages for use as
 
 required        |
 ----------------|
-oenssh          |
+openssh         |
 ca-certificates |
 git             |
 tar             |
