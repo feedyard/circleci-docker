@@ -259,3 +259,27 @@ alpine:3.10.1
 ### 08-26-2019 release version 5.3.1
 
 alpine 3.10.2 base image
+
+### 12-28-2019 release version 5.4.0
+
+alpine 3.11.2
+
+(1/19) Installing ca-certificates (20191127-r0)
+(2/19) Installing nghttp2-libs (1.40.0-r0)
+(3/19) Installing libcurl (7.67.0-r0)
+(4/19) Installing expat (2.2.9-r1)
+(5/19) Installing pcre2 (10.34-r1)
+(6/19) Installing git (2.24.1-r0)
+(7/19) Installing gzip (1.10-r0)
+(8/19) Installing openssh-keygen (8.1_p1-r0)
+(9/19) Installing ncurses-terminfo-base (6.1_p20191130-r0)
+(10/19) Installing ncurses-terminfo (6.1_p20191130-r0)
+(11/19) Installing ncurses-libs (6.1_p20191130-r0)
+(12/19) Installing libedit (20191211.3.1-r0)
+(13/19) Installing openssh-client (8.1_p1-r0)
+(14/19) Installing openssh-sftp-server (8.1_p1-r0)
+(15/19) Installing openssh-server-common (8.1_p1-r0)
+(16/19) Installing openssh-server (8.1_p1-r0)
+(17/19) Installing openssh (8.1_p1-r0)
+(18/19) Installing libacl (2.2.53-r0)
+(19/19) Installing tar (1.32-r1)

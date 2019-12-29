@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-ruby ">= 2.6.0"
+ruby ">= 2.6.2"
 
-gem 'inspec', '~> 3.9'
+gem 'inspec', '~> 4.18'
