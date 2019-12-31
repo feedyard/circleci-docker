@@ -3,4 +3,4 @@
 source 'https://rubygems.org'
 ruby ">= 2.6.2"
 
-gem 'inspec', '~> 4.18'
+gem 'inspec-bin', '~> 4.18'

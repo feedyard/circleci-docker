@@ -2,7 +2,8 @@
 version: 2.1
 
 orbs:
-  executor-tools: feedyard/executor-tools@0.3.0
+  executor-tools: feedyard/executor-tools@dev:8456d99
+  #executor-tools: feedyard/executor-tools@0.3.0
   common: feedyard/common-pipeline-tasks@0.6.0
 
 workflows:
@@ -14,7 +15,9 @@ workflows:
           name: dev-release
           context: executor-publishing
           image: feedyard/circleci-remote-docker
-          registry: quay.io
+          #registry: quay.io
+          registry-login: DOCKERLOGIN
+          registry-password: DOCKERTOKEN
           after-build:
             - run:
                 name: configuration testing
@@ -32,16 +35,19 @@ workflows:
       - executor-tools/publish:
           context: executor-publishing
           image: feedyard/circleci-remote-docker
-          registry: quay.io
+          #registry: quay.io
+          registry-login: DOCKERLOGIN
+          registry-password: DOCKERTOKEN
           after-publish:
             - common/slack:
                 title: New Executor Version
                 message: new version published feedyard/circleci-remote-docker $CIRCLE_TAG
                 webhook: SLACK_WEBHOOK
           clean-tags:
-            - executor-tools/clean-quay:
+            - executor-tools/clean-docker-hub:
                 image: feedyard/circleci-remote-docker
-                bearer-token: QUAYIO_BEARER_TOKEN
+                registry-login: DOCKERLOGIN
+                registry-password: DOCKERTOKEN
           filters:
             branches:
               ignore: /.*/
@@ -64,7 +70,9 @@ workflows:
           image: feedyard/circleci-remote-docker
           dockerfile: Dockerfile.unpinned
           tag: nightly
-          registry: quay.io
+          # registry: quay.io
+          registry-login: DOCKERLOGIN
+          registry-password: DOCKERTOKEN
           after-build:
             - run:
                 name: configuration testing

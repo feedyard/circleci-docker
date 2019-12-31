@@ -1,3 +1,4 @@
+# for nightly build
 FROM alpine:latest
 
 LABEL maintainer=<nic.cheneweth@thoughtworks.com>

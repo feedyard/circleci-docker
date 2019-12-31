@@ -14,3 +14,7 @@ Use as starting point for CircleCI executors that can support Alpine, adding nec
 specific pipelines.
 
 See CHANGELOG for detailed list of installed packages/versions per versioned build
+
+### example configurations
+
+- this example uses only circleci ceontext variables to provide needed secrets
