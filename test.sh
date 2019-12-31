@@ -1,21 +1,7 @@
-!/usr/bin/env bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-USERNAME="ncheneweth"
-PASSWORD="MCD*#lkd9"
-ORGANIZATION="feedyard"
-IMAGE="circleci-remote-docker"
-TAG="latest"
-
-TOKEN=`curl -s -H "Content-Type: application/json" -X POST -d '{"username": "'$USERNAME'", "password": "'$PASSWORD'"}' https://hub.docker.com/v2/users/login/ | jq -r .token`
-
-#GET /v2/<name>/tags/list
-
-curl "https://hub.docker.com/v2/repositories/${ORGANIZATION}/${IMAGE}/tags/" \
--X GET \
--H "Authorization: JWT ${TOKEN}"
-
-curl "https://hub.docker.com/v2/repositories/${ORGANIZATION}/${IMAGE}/tags/${TAG}/" \
--X DELETE \
--H "Authorization: JWT ${TOKEN}"
-
-cat output | jq -r '.results | .[] | select(.name | contains (".6."))'
+inspec exec --no-distinct-exit --chef-license accept-silent profiles/cis-docker
+CID="$(docker run -it -d --entrypoint ash feedyard/circleci-remote-docker:dev.$CIRCLE_SHA1)"
+inspec exec profiles/circleci-remote-docker/ -t docker://$CID
+docker rm -f $CID

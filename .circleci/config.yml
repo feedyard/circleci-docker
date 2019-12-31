@@ -15,18 +15,10 @@ workflows:
           name: dev-release
           context: executor-publishing
           image: feedyard/circleci-remote-docker
-          #registry: quay.io
-          registry-login: DOCKERLOGIN
-          registry-password: DOCKERTOKEN
           after-build:
             - run:
                 name: configuration testing
-                command: |
-                  set -euo pipefail
-                  inspec exec --no-distinct-exit profiles/cis-docker
-                  CID="$(docker run -it -d --entrypoint ash feedyard/circleci-remote-docker:dev.$CIRCLE_SHA1)"
-                  inspec exec profiles/circleci-remote-docker/ -t docker://$CID
-                  docker rm -f $CID
+                command: ash test.sh
           filters:
             branches:
               only: /master/
@@ -35,9 +27,6 @@ workflows:
       - executor-tools/publish:
           context: executor-publishing
           image: feedyard/circleci-remote-docker
-          #registry: quay.io
-          registry-login: DOCKERLOGIN
-          registry-password: DOCKERTOKEN
           after-publish:
             - common/slack:
                 title: New Executor Version
@@ -70,15 +59,7 @@ workflows:
           image: feedyard/circleci-remote-docker
           dockerfile: Dockerfile.unpinned
           tag: nightly
-          # registry: quay.io
-          registry-login: DOCKERLOGIN
-          registry-password: DOCKERTOKEN
           after-build:
             - run:
                 name: configuration testing
-                command: |
-                  set -euo pipefail
-                  inspec exec --no-distinct-exit --chef-license accept-silent profiles/cis-docker
-                  CID="$(docker run -it -d --entrypoint ash quay.io/feedyard/circleci-remote-docker:nightly)"
-                  inspec exec profiles/circleci-remote-docker-unpinned/ -t docker://$CID --chef-license accept-silent
-                  docker rm -f $CID
+                command: ash test_nightly.sh
